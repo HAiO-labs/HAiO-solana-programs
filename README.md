@@ -33,12 +33,15 @@ A Solana program that ensures a user has an Associated Token Account (ATA) for a
 
 ### 4. Withdrawal Logger Program
 
-A minimal Solana program for logging withdrawal requests.
+A minimal Solana program for logging withdrawal requests with token ticker information.
 
-- Emits single log line: WITHDRAW=<amount>
+- Emits single log line: WITHDRAWAL=<ticker>,<amount>
+- Validates ticker format (2-8 ASCII characters: A-Z, 0-9, \_)
+- Validates amount (must be greater than 0)
 - No on-chain state storage (stateless design)
 - Cheapest possible bookkeeping mechanism
 - Requires only transaction signature verification
+- Easily parseable log format for off-chain processing
 
 ## Quick Start
 

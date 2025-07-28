@@ -21,10 +21,25 @@ pub mod withdrawal_logger {
     use super::*;
 
     /// Logs the requested withdrawal amount.
-    pub fn request_withdrawal(_ctx: Context<RequestWithdrawal>, amount: u64) -> Result<()> {
+    /// 
+    /// * `ticker` must be 2–8 ASCII letters (A‑Z, 0‑9, _) to keep the
+    /// * `amount` is already adjusted for decimals by the front‑end.
+    pub fn request_withdrawal(
+        _ctx: Context<RequestWithdrawal>,
+        ticker: String,
+        amount: u64,
+    ) -> Result<()> {
         require!(amount > 0, WithdrawalLoggerError::InvalidAmount);
+        require!(ticker.len() >= 2 && ticker.len() <= 8, WithdrawalLoggerError::BadTicker);
+        require!(
+            ticker
+                .bytes()
+                .all(|b| matches!(b, b'A'..=b'Z' | b'0'..=b'9' | b'_')),
+            WithdrawalLoggerError::BadTicker,
+        );
 
-        msg!("WITHDRAWAL={}", amount);
+        // Example: WITHDRAWAL=USDC,1500
+        msg!("WITHDRAWAL={},{}", ticker, amount);
         Ok(())
     }
 }
@@ -39,4 +54,6 @@ pub struct RequestWithdrawal<'info> {
 pub enum WithdrawalLoggerError {
     #[msg("Amount must be greater than 0")]
     InvalidAmount,
+    #[msg("Ticker must be 2–8 printable ASCII chars (A‑Z, 0‑9, _)")]
+    BadTicker,
 }
