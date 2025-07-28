@@ -3021,7 +3021,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "withdraw_logger"
+name = "withdrawal_logger"
 version = "0.1.0"
 dependencies = [
  "anchor-lang",
