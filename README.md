@@ -110,7 +110,7 @@ haio-solana-programs/
 | Early-Access      | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  |
 | Daily Check-In    | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  |
 | Create ATA        | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` |
-| Withdrawal Logger | `TODO:replace-with-program-id`                 | `TODO:replace-with-program-id`                 |
+| Withdrawal Logger | `HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z` | `HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z` |
 
 ## Security
 
