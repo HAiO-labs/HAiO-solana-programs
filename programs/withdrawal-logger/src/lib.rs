@@ -32,8 +32,7 @@ pub mod withdrawal_logger {
 /// No additional accounts are required; the caller just signs the tx.
 #[derive(Accounts)]
 pub struct RequestWithdraw<'info> {
-    #[account(signer)]
-    pub user: AccountInfo<'info>,
+    pub user: Signer<'info>,
 }
 
 #[error_code]
