@@ -31,6 +31,15 @@ A Solana program that ensures a user has an Associated Token Account (ATA) for a
 - Always emits a single event (`AtaCallEvent`) per call
 - The event field `created_this_tx` is `true` if the ATA was created in this transaction, or `false` if it already existed
 
+### 4. Withdraw Logger Program
+
+A minimal Solana program for logging withdrawal requests.
+
+- Emits single log line: WITHDRAW=<amount>
+- No on-chain state storage (stateless design)
+- Cheapest possible bookkeeping mechanism
+- Requires only transaction signature verification
+
 ## Quick Start
 
 ### Prerequisites
@@ -81,6 +90,10 @@ haio-solana-programs/
 │   │   ├── src/
 │   │   │   └── lib.rs
 │   │   └── Cargo.toml
+│   ├── withdraw-logger/   # Withdraw Logger program source
+│   │   ├── src/
+│   │   │   └── lib.rs
+│   │   └── Cargo.toml
 ├── tests/                   # Test files
 ├── Anchor.toml             # Anchor configuration
 ├── Cargo.toml              # Rust workspace configuration
@@ -89,11 +102,12 @@ haio-solana-programs/
 
 ## Program Addresses
 
-| Program        | Devnet                                         | Mainnet                                        |
-| -------------- | ---------------------------------------------- | ---------------------------------------------- |
-| Early-Access   | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  |
-| Daily Check-In | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  |
-| Create ATA     | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` |
+| Program         | Devnet                                         | Mainnet                                        |
+| --------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Early-Access    | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  |
+| Daily Check-In  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  |
+| Create ATA      | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` |
+| Withdraw Logger | `11111111111111111111111111111111`             | `11111111111111111111111111111111`             |
 
 ## Security
 
