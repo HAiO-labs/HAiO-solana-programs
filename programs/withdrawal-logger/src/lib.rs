@@ -24,7 +24,7 @@ pub mod withdrawal_logger {
     pub fn request_withdrawal(_ctx: Context<RequestWithdrawal>, amount: u64) -> Result<()> {
         require!(amount > 0, WithdrawalLoggerError::InvalidAmount);
 
-        msg!("WITHDRAW={}", amount);
+        msg!("WITHDRAWAL={}", amount);
         Ok(())
     }
 }
