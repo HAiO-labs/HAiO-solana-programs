@@ -31,7 +31,7 @@ A Solana program that ensures a user has an Associated Token Account (ATA) for a
 - Always emits a single event (`AtaCallEvent`) per call
 - The event field `created_this_tx` is `true` if the ATA was created in this transaction, or `false` if it already existed
 
-### 4. Withdraw Logger Program
+### 4. Withdrawal Logger Program
 
 A minimal Solana program for logging withdrawal requests.
 
@@ -90,7 +90,7 @@ haio-solana-programs/
 │   │   ├── src/
 │   │   │   └── lib.rs
 │   │   └── Cargo.toml
-│   ├── withdraw-logger/   # Withdraw Logger program source
+│   ├── withdrawal-logger/   # Withdrawal Logger program source
 │   │   ├── src/
 │   │   │   └── lib.rs
 │   │   └── Cargo.toml
@@ -102,12 +102,12 @@ haio-solana-programs/
 
 ## Program Addresses
 
-| Program         | Devnet                                         | Mainnet                                        |
-| --------------- | ---------------------------------------------- | ---------------------------------------------- |
-| Early-Access    | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  |
-| Daily Check-In  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  |
-| Create ATA      | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` |
-| Withdraw Logger | `11111111111111111111111111111111`             | `11111111111111111111111111111111`             |
+| Program           | Devnet                                         | Mainnet                                        |
+| ----------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Early-Access      | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  |
+| Daily Check-In    | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  |
+| Create ATA        | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` |
+| Withdrawal Logger | `TODO:replace-with-program-id`                 | `TODO:replace-with-program-id`                 |
 
 ## Security
 

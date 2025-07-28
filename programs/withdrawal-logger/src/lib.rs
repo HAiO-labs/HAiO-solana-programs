@@ -5,7 +5,7 @@ use solana_security_txt::security_txt;
 
 #[cfg(not(feature = "no-entrypoint"))]
 security_txt! {
-    name: "HAiO Withdraw Logger Program",
+    name: "HAiO Withdrawal Logger Program",
     project_url: "https://haio.fun",
     contacts: "email:cto@haio.fun",
     policy: "We do not pay a bug bounty.",
@@ -17,11 +17,13 @@ security_txt! {
 declare_id!("HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o");
 
 #[program]
-pub mod withdraw_logger {
+pub mod withdrawal_logger {
     use super::*;
 
     /// Logs the requested withdrawal amount.
     pub fn request_withdraw(_ctx: Context<RequestWithdraw>, amount: u64) -> Result<()> {
+        require!(amount > 0, WithdrawalLoggerError::InvalidAmount);
+
         msg!("WITHDRAW={}", amount);
         Ok(())
     }
@@ -32,4 +34,10 @@ pub mod withdraw_logger {
 pub struct RequestWithdraw<'info> {
     #[account(signer)]
     pub user: AccountInfo<'info>,
+}
+
+#[error_code]
+pub enum WithdrawalLoggerError {
+    #[msg("Amount must be greater than 0")]
+    InvalidAmount,
 }

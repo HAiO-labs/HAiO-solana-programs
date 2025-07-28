@@ -2,7 +2,7 @@
 name = "withdraw_logger"
 version = "0.1.0"
 edition = "2021"
-description = "HAiO program for withdraw logging"
+description = "HAiO program for withdrawal logging"
 authors = ["CTO <cto@haio.fun>"]
 
 [lib]
