@@ -14,7 +14,7 @@ security_txt! {
     source_revision: "main"
 }
 
-declare_id!("HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o");
+declare_id!("HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z");
 
 #[program]
 pub mod withdrawal_logger {
