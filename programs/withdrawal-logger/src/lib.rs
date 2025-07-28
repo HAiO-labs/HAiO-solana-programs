@@ -21,7 +21,7 @@ pub mod withdrawal_logger {
     use super::*;
 
     /// Logs the requested withdrawal amount.
-    pub fn request_withdraw(_ctx: Context<RequestWithdraw>, amount: u64) -> Result<()> {
+    pub fn request_withdrawal(_ctx: Context<RequestWithdrawal>, amount: u64) -> Result<()> {
         require!(amount > 0, WithdrawalLoggerError::InvalidAmount);
 
         msg!("WITHDRAW={}", amount);
@@ -31,7 +31,7 @@ pub mod withdrawal_logger {
 
 /// No additional accounts are required; the caller just signs the tx.
 #[derive(Accounts)]
-pub struct RequestWithdraw<'info> {
+pub struct RequestWithdrawal<'info> {
     pub user: Signer<'info>,
 }
 
