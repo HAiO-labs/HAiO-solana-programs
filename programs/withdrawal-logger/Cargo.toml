@@ -1,0 +1,23 @@
+[package]
+name = "withdrawal_logger"
+version = "0.1.0"
+edition = "2021"
+description = "HAiO program for withdrawal logging"
+authors = ["CTO <cto@haio.fun>"]
+
+[lib]
+name = "withdrawal_logger"
+crate-type = ["cdylib", "lib"]
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+
+[dependencies]
+anchor-lang = "0.31.1"
+sha2 = "0.10.8"
+solana-security-txt = "1.1.1"
