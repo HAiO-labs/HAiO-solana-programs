@@ -43,6 +43,41 @@ A minimal Solana program for logging withdrawal requests with token ticker infor
 - Requires only transaction signature verification
 - Easily parseable log format for off-chain processing
 
+### 5. Transaction Gateway Program
+
+A comprehensive Solana program for managing membership payments and deposits with multi-token support.
+
+**Membership Payment System:**
+
+- Supports SOL and SPL token payments for membership fees
+- Configurable monthly and yearly fee structures
+- Automatic transfer to treasury wallet
+- PDA-based configuration management with admin controls
+- Event emission for payment tracking and transparency
+
+**Deposit System:**
+
+- Accepts SOL and SPL token deposits
+- Whitelist-based mint validation for security
+- Automatic transfer to designated deposit wallet
+- Dynamic space reallocation for configuration updates
+- Event emission for deposit tracking
+
+**Admin Features:**
+
+- Separate admin controls for membership and deposit systems
+- Configuration update capabilities
+- Admin transfer functionality
+- Dynamic account resizing for expanding token lists
+
+**Security & Architecture:**
+
+- PDA-based configuration storage (seeds: "membership_config", "deposit_config")
+- Comprehensive validation for mint addresses and token accounts
+- Support for EOA and multisig wallets
+- Stateless design with minimal on-chain storage
+- Event-driven architecture for off-chain processing
+
 ## Quick Start
 
 ### Prerequisites
@@ -97,6 +132,10 @@ haio-solana-programs/
 │   │   ├── src/
 │   │   │   └── lib.rs
 │   │   └── Cargo.toml
+│   ├── transaction-gateway/ # Transaction Gateway program source
+│   │   ├── src/
+│   │   │   └── lib.rs
+│   │   └── Cargo.toml
 ├── tests/                   # Test files
 ├── Anchor.toml             # Anchor configuration
 ├── Cargo.toml              # Rust workspace configuration
@@ -105,12 +144,13 @@ haio-solana-programs/
 
 ## Program Addresses
 
-| Program           | Devnet                                         | Mainnet                                        |
-| ----------------- | ---------------------------------------------- | ---------------------------------------------- |
-| Early-Access      | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  |
-| Daily Check-In    | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  |
-| Create ATA        | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` |
-| Withdrawal Logger | `HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z` | `HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z` |
+| Program             | Devnet                                         | Mainnet                                        |
+| ------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Early-Access        | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  | `jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ`  |
+| Daily Check-In      | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  | `haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF`  |
+| Create ATA          | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` | `HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o` |
+| Withdrawal Logger   | `HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z` | `HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z` |
+| Transaction Gateway | `HaioYYCZuXWxiHjFG9i8MnzAH6dFdgh1E1eCGjTwWzb`  | `HaioYYCZuXWxiHjFG9i8MnzAH6dFdgh1E1eCGjTwWzb`  |
 
 ## Security
 

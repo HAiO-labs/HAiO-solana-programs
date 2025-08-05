@@ -10,18 +10,21 @@ withdrawal_logger = "HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z"
 create_ata = "HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o"
 daily_check_in = "haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF"
 early_access = "jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ"
+transaction_gateway = "HaioYYCZuXWxiHjFG9i8MnzAH6dFdgh1E1eCGjTwWzb"
 
 [programs.devnet]
 withdrawal_logger = "HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z"
 create_ata = "HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o"
 daily_check_in = "haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF"
 early_access = "jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ"
+transaction_gateway = "HaioYYCZuXWxiHjFG9i8MnzAH6dFdgh1E1eCGjTwWzb"
 
 [programs.mainnet]
 withdrawal_logger = "HaiooUZ4qzSEi2sn1qbwH8mKVXgnwY8oyziUStJDcb6Z"
 create_ata = "HAiowc2WWGp3VwVjpAtiduLCwWQmQqVPQgLbn5jurM8o"
 daily_check_in = "haio6iJNBgiAcm6DfxbqAfwNpsqhd4n2qswjPNhxuzF"
 early_access = "jg82rRko6Hu1KqZ47RR95Jrq1cfqBhaAPXStseajmfQ"
+transaction_gateway = "HaioYYCZuXWxiHjFG9i8MnzAH6dFdgh1E1eCGjTwWzb"
 
 [registry]
 url = "https://anchor.projectserum.com"
